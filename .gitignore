@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.vercel/
+.env
+.env.local
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+
+# Datos internos del equipo: no van al repo
+supabase/seed_pendientes.sql
+supabase/instalar.sql
+scripts/seed.py
