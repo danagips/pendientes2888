@@ -108,4 +108,23 @@ export type Pendiente = {
   creado_por: string | null;
   creado_en: string;
   orden: number;
+  /** Códigos de departamento/edificio vinculados (tabla deptos). */
+  deptos: string[];
+  /** Si no es null, la tarea está frenada esperando esto. */
+  esperando: string | null;
+  recurrencia: Recurrencia | null;
+  /** Rutas de fotos en el bucket "pendientes". */
+  fotos: string[];
 };
+
+export const RECURRENCIAS = ["semanal", "mensual"] as const;
+export type Recurrencia = (typeof RECURRENCIAS)[number];
+export function esRecurrencia(v: unknown): v is Recurrencia {
+  return typeof v === "string" && (RECURRENCIAS as readonly string[]).includes(v);
+}
+
+/** Días abierta a partir de los cuales una tarea se marca como estancada. */
+export const DIAS_ESTANCADA = 7;
+
+/** Áreas que salen a la calle y tienen recorrido. */
+export const AREAS_RECORRIDO: readonly Area[] = ["cadeteria", "mantenimiento"];
