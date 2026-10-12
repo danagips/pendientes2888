@@ -19,6 +19,12 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
+      <head>
+        <style>{`
+          html, body { background: #f7f5f4; }
+          @media (prefers-color-scheme: dark) { html, body { background: #161212; } }
+        `}</style>
+      </head>
       <body
         style={{
           margin: 0,
