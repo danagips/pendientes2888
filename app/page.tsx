@@ -409,7 +409,7 @@ function Recorrido({ tareas, ctx }: { tareas: Pendiente[]; ctx: Ctx }) {
 
       {paradas.length > 0 ? (
         <div className={s.mapas}>
-          <strong>{paradas.length} paradas</strong>, ordenadas por zona de norte a sur.
+          <p style={{ margin: 0 }}><strong>{paradas.length} paradas</strong>, ordenadas por zona de norte a sur.</p>
           <div className={s.fila}>
             {links.map((l, i) => (
               <a key={l} className={s.primario} href={l} target="_blank" rel="noreferrer">
